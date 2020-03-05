@@ -9,3 +9,6 @@ RUN mkdir /fugacious
 WORKDIR /fugacious
 ADD . /fugacious
 RUN bin/setup
+EXPOSE 3000
+CMD foreman start --port 3000
+
