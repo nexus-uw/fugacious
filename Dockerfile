@@ -10,5 +10,6 @@ WORKDIR /fugacious
 ADD . /fugacious
 RUN bin/setup
 EXPOSE 3000
+ENV REDIS_URL=redis://redis
 CMD foreman start --port 3000
 
