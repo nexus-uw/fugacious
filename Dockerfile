@@ -11,6 +11,12 @@ RUN mkdir /fugacious
 WORKDIR /fugacious
 ADD . /fugacious
 RUN bin/setup
+
+RUN apt-get remove build-essential \
+        libpq-dev \
+        libqt4-dev \
+        libqtwebkit-dev -y && apt-get autoclean -y && apt-get autoremove -y
+
 EXPOSE 3000
 
 ENV REDIS_URL=redis://redis
